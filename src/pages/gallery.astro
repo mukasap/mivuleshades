@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Images
+// import Gallery9 from '../assets/gallery/2.jpeg';
+// import Wedding from '../assets/wedding.jpg';
+// import Ball from '../assets/kids-training.jpg';
+// import Gallery6 from '../assets/gallery/3.jpeg';
+// import Party from '../assets/party.jpg';
+// import Meeting from '../assets/corprate.jpg';
+// import Gallery5 from '../assets/gallery/5.jpeg';
+// import Gallery2 from '../assets/gallery/10.jpeg';
+// import Meeting1 from '../assets/connect.jpg';
+// import Event from '../assets/gallery/7.jpeg';
+// import Gallery3 from '../assets/wedding-shoot.png';
+// import Gallery4 from '/src/assets/gallery/4.jpeg';
+
+// const images = [
+//   { src: Gallery9, alt: 'Event moment' },
+//   { src: Wedding, alt: 'Wedding celebration' },
+//   { src: Ball, alt: 'Kids training session' },
+//   { src: Gallery6, alt: 'Outdoor gathering' },
+//   { src: Party, alt: 'Party atmosphere' },
+//   { src: Meeting, alt: 'Corporate meeting' },
+//   { src: Gallery5, alt: 'Community event' },
+//   { src: Gallery2, alt: 'Venue activity' },
+//   { src: Meeting1, alt: 'Networking connection' },
+//   { src: Event, alt: 'Live event' },
+//   { src: Gallery3, alt: 'Wedding photoshoot' },
+//   { src: Gallery4, alt: 'Celebration moment' },
+// ];
+import GalleryWidget from '../components/GalleryWidget.astro';
+---
+
+<Layout>
+  <!-- Hero -->
+  <section class="py-20 px-5 text-center bg-primary">
+    <!-- Page Header -->
+      <div class="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-dark mb-3 md:mb-4">
+          Gallery
+        </h1>
+        <p class="text-lg md:text-xl text-text-muted">
+          A glimpse into our space, events, and natural beauty.
+          Versatile spaces designed for every occasion. From celebrations to corporate events.
+        </p>
+      </div>
+    <GalleryWidget/>
+  </section>
+
+</Layout>

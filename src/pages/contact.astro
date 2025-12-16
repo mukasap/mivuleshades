@@ -1,0 +1,266 @@
+---
+// contact.astro - Contact page for Mivule Shades
+import Layout from '../layouts/Layout.astro';
+
+const title = "Contact Mivule Shades – Book Your Space in Kitagobwa";
+const description = "Get in touch with Mivule Shades via WhatsApp, phone, email, or social media. Book your event space, check availability, or schedule a visit.";
+const image = "/images/hero.jpg";
+---
+
+<Layout {title} {description} {image}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-brand/10 via-bg-muted to-bg py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-4">
+          Get in Touch
+        </h1>
+        <p class="text-lg md:text-xl text-text-muted mb-8">
+          Ready to book your perfect event space? Contact us through any channel below.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a 
+            href="https://wa.me/25675221450" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-emerald-500 text-text-inverse font-bold py-3 px-6 rounded-full hover:bg-emerald-600 transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.76.982.998-3.675-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.9 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
+            </svg>
+            WhatsApp Us
+          </a>
+          <a 
+            href="tel:+25678460792" 
+            class="inline-flex items-center gap-2 bg-brand text-text-inverse font-bold py-3 px-6 rounded-full hover:bg-brand-hover transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call Now
+          </a>
+          <a 
+            href="mailto:info.mivuleshades@gmail.com" 
+            class="inline-flex items-center gap-2 bg-accent text-dark font-bold py-3 px-6 rounded-full hover:bg-accent-hover transition-colors duration-300 shadow-md hover:shadow-lg"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Send Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Details Section -->
+  <section class="py-16 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Quick Contact Cards -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Phone Card -->
+        <div class="bg-surface rounded-2xl p-6 md:p-8 text-center border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-brand/10 mx-auto mb-6">
+            <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">Call Us Directly</h3>
+          <div class="space-y-3 mb-6">
+            <a 
+              href="tel:+25678460792" 
+              class="block text-lg text-text hover:text-brand transition-colors duration-300"
+            >
+              <span class="font-semibold">Primary:</span> +256 784 607 92
+            </a>
+            <a 
+              href="tel:+25675221450" 
+              class="block text-lg text-text hover:text-brand transition-colors duration-300"
+            >
+              <span class="font-semibold">WhatsApp:</span> +256 752 214 50
+            </a>
+          </div>
+          <a 
+            href="tel:+25678460792" 
+            class="inline-flex items-center justify-center w-full py-3 px-4 bg-brand text-text-inverse font-semibold rounded-lg hover:bg-brand-hover transition-colors duration-300 group"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call Now
+          </a>
+        </div>
+
+        <!-- WhatsApp Card -->
+        <div class="bg-surface rounded-2xl p-6 md:p-8 text-center border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mx-auto mb-6">
+            <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.76.982.998-3.675-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.9 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">Instant WhatsApp</h3>
+          <p class="text-text-muted mb-6">
+            Fastest response time for inquiries and bookings.
+          </p>
+          <a 
+            href="https://wa.me/25675221450" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full py-3 px-4 bg-emerald-500 text-text-inverse font-semibold rounded-lg hover:bg-emerald-600 transition-colors duration-300 group"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.76.982.998-3.675-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.9 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
+            </svg>
+            Message on WhatsApp
+          </a>
+        </div>
+
+        <!-- Email Card -->
+        <div class="bg-surface rounded-2xl p-6 md:p-8 text-center border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mx-auto mb-6">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">Email Us</h3>
+          <a 
+            href="mailto:info.mivuleshades@gmail.com" 
+            class="block text-lg text-text hover:text-brand transition-colors duration-300 mb-6 break-words"
+          >
+            info.mivuleshades@gmail.com
+          </a>
+          <p class="text-text-muted text-sm mb-6">
+            Response within 24 hours for detailed inquiries
+          </p>
+          <a 
+            href="mailto:info.mivuleshades@gmail.com" 
+            class="inline-flex items-center justify-center w-full py-3 px-4 bg-accent text-dark font-semibold rounded-lg hover:bg-accent-hover transition-colors duration-300 group"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Send Email
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Location Section -->
+      <div class="bg-surface rounded-2xl p-6 md:p-8 mb-12 border border-border shadow-lg">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-brand/10">
+              <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold text-dark mb-2">Visit Our Location</h3>
+            <p class="text-lg text-dark font-medium">
+              Kitgobwa Kasangati, Gayaza Road, Uganda
+            </p>
+            <p class="text-text-muted mt-2">
+              A serene natural setting just outside Kampala, easily accessible from the city center.
+            </p>
+          </div>
+          <div class="mt-4 md:mt-0 md:ml-auto">
+            <a 
+              href="https://maps.google.com/?q=Kitgobwa+Kasangati+Uganda" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-brand text-text-inverse font-semibold py-3 px-6 rounded-full hover:bg-brand-hover transition-colors duration-300 shadow-md hover:shadow-lg group"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        
+        <!-- Map -->
+        <div class="mt-8 rounded-xl overflow-hidden shadow-md">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63813.35389114234!2d32.5371663!3d0.4470556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177d9c7ccb194b27%3A0xe6f4d4c25af2713a!2sKitagobwa%2C%20Uganda!5e0!3m2!1sen!2sus!4v1693345678901!5m2!1sen!2sus" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mivule Shades Location Map"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Operating Hours -->
+      <div class="bg-surface rounded-2xl p-6 md:p-8 border border-border shadow-lg mb-12">
+        <h3 class="text-xl font-bold text-dark mb-6 text-center">Operating Hours</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="text-center md:text-left">
+            <h4 class="font-semibold text-lg text-dark mb-3">Event Bookings</h4>
+            <ul class="space-y-2">
+              <li class="flex justify-between items-center py-2 border-b border-border/50">
+                <span class="text-text">Monday - Saturday</span>
+                <span class="font-medium text-dark">8:00 AM - 8:00 PM</span>
+              </li>
+              <li class="flex justify-between items-center py-2 border-b border-border/50">
+                <span class="text-text">Sunday</span>
+                <span class="font-medium text-dark">10:00 AM - 6:00 PM</span>
+              </li>
+            </ul>
+          </div>
+          <div class="text-center md:text-left">
+            <h4 class="font-semibold text-lg text-dark mb-3">Contact Hours</h4>
+            <ul class="space-y-2">
+              <li class="flex justify-between items-center py-2 border-b border-border/50">
+                <span class="text-text">Phone & WhatsApp</span>
+                <span class="font-medium text-dark">8:00 AM - 8:00 PM</span>
+              </li>
+              <li class="flex justify-between items-center py-2">
+                <span class="text-text">Email Response</span>
+                <span class="font-medium text-dark">Within 24 Hours</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-text-muted text-sm mt-6 text-center">
+          *Site visits by appointment only. Please contact us to schedule.
+        </p>
+      </div>
+
+    
+
+      <!-- FAQ/Quick Info -->
+      <div class="mt-16 bg-surface rounded-2xl p-6 md:p-8 border border-border">
+        <h3 class="text-2xl font-bold text-dark mb-6 text-center">Frequently Asked Questions</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="border-l-4 border-brand pl-4">
+              <h4 class="font-semibold text-dark mb-2">How do I book a space?</h4>
+              <p class="text-text text-sm">Contact us via WhatsApp or phone to check availability and discuss your requirements.</p>
+            </div>
+            <div class="border-l-4 border-brand pl-4">
+              <h4 class="font-semibold text-dark mb-2">Can I visit before booking?</h4>
+              <p class="text-text text-sm">Yes, site visits are available by appointment. Contact us to schedule a tour.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="border-l-4 border-brand pl-4">
+              <h4 class="font-semibold text-dark mb-2">What payment methods do you accept?</h4>
+              <p class="text-text text-sm">We accept mobile money (MTN, Airtel), bank transfers, and cash payments.</p>
+            </div>
+            <div class="border-l-4 border-brand pl-4">
+              <h4 class="font-semibold text-dark mb-2">Do you provide chairs and tents?</h4>
+              <p class="text-text text-sm">We provide chairs for family events only. Tents, tables, and catering should be arranged separately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

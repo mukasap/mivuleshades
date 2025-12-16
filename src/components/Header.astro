@@ -1,0 +1,129 @@
+---
+import LogoImage from '../assets/logo.png'
+const navItems = [
+  { label: "Home", href: "/"},
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
+];
+
+// Auto-detect current page from URL
+const currentUrl = Astro.url.pathname;
+const currentPage = currentUrl === "/" ? "/" : currentUrl;
+---
+
+<header
+  class="relative z-20 w-full border-b border-border bg-bg/90 backdrop-blur-sm shadow-sm
+         after:absolute after:top-full after:left-0 after:block after:h-px after:w-full after:bg-border
+         lg:after:hidden"
+>
+  <div class="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
+    <nav
+      aria-label="main navigation"
+      role="navigation"
+      class="flex h-[5.5rem] items-stretch justify-between font-medium text-text-muted"
+    >
+      <!-- Brand -->
+      <a
+        href="/"
+        aria-label="Brand logo"
+        class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1 text-text font-semibold"
+      >
+        <span class="flex h-12 w-12 items-center justify-center rounded-lg text-text-inverse">
+          <img src={LogoImage.src}>
+        </span>
+        Mivule Shades
+      </a>
+
+      <!-- Burger (mobile) -->
+      <button
+        id="nav-toggle"
+        class="relative self-center order-10 z-30 flex flex-col justify-center gap-1.5 lg:hidden text-text"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation"
+      >
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+      <!-- Navigation links -->
+      <ul
+        role="menubar"
+        aria-label="Select page"
+        class="invisible absolute top-0 left-0 z-[-1] ml-auto h-screen w-full
+               justify-center overflow-y-auto overscroll-contain
+               bg-bg/90 px-8 pb-12 pt-28 font-medium opacity-0
+               transition-[opacity,visibility] duration-300
+               lg:visible lg:relative lg:top-0 lg:z-0 lg:flex
+               lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible
+               lg:bg-transparent lg:px-0 lg:py-0 lg:pt-0 lg:opacity-100"
+        id="mobile-menu"
+      >
+        {navItems.map((item) => (
+          <li role="none" class="flex items-stretch">
+            <a
+              role="menuitem"
+              href={item.href}
+              aria-current={currentPage ? "page" : undefined}
+              class:list={[
+                "flex items-center gap-2 py-4 transition-colors duration-300 lg:px-8",
+                currentPage
+                  ? "text-brand"
+                  : "hover:text-brand focus:text-brand focus:outline-none",
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA -->
+      <div class="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center h-10 gap-2 px-5
+                 text-sm font-medium tracking-wide text-text-inverse
+                 transition duration-300 rounded shadow-md whitespace-nowrap
+                 bg-brand hover:bg-brand-hover focus:bg-brand-hover
+                 focus-visible:outline-none"
+        >
+          <!-- Calendar Icon -->
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Check Availability
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle.classList.toggle('open');
+
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('invisible');
+  });
+
+  menu.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target instanceof HTMLAnchorElement) {
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.classList.add('opacity-0', 'pointer-events-none', 'invisible');
+    }
+  });
+</script>

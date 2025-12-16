@@ -1,0 +1,324 @@
+---
+// about.astro - About page for Mivule Shades
+// Uses BaseLayout, no separate components needed
+import Layout from '../layouts/Layout.astro';
+import AboutImage1 from '../assets/kids-training.jpg'
+import AboutImage2 from '../assets/party.jpg'
+
+// Page metadata
+const title = "About Mivule Shades – Celebrating Life, Community & Nature";
+const description = "Discover our story, vision, mission, and core values. Mivule Shades is a versatile outdoor space for unforgettable events in Kitagobwa, Kansangati.";
+const image = "/images/hero.jpg";
+---
+
+<Layout {title} {description} {image}>
+  <!-- Small Banner 
+  <section class="w-full h-[220px] md:h-[280px] bg-cover bg-center" style="background-image: url('/images/hero.jpg');">
+    <div class="w-full h-full bg-gradient-to-r from-brand/60 to-dark/40 flex items-center justify-center">
+      <div class="text-center px-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-inverse mb-4 drop-shadow-lg">
+          Our Story
+        </h1>
+        <p class="text-lg md:text-xl text-text-inverse/90 max-w-2xl mx-auto drop-shadow-md">
+          Rooted in Nature. Built for Community. Made for Moments.
+        </p>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- Main Content -->
+  <section class="py-16 md:py-24 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">
+          Where Nature Meets Celebration
+        </h2>
+        <p class="text-lg md:text-xl text-text-muted leading-relaxed">
+          At Mivule Shades, we believe life is richer when people gather—when families, friends, 
+          and teams meet in a natural space designed for warmth, harmony, and unforgettable moments.
+        </p>
+      </div>
+
+      <!-- Story Section -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div class="relative group">
+          <img 
+            src={AboutImage1.src} 
+            alt="Family gathering at Mivule Shades" 
+            class="w-full rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent rounded-2xl"></div>
+          <div class="absolute top-4 left-4">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/90 text-dark text-sm font-semibold">
+              Family Friendly
+            </span>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-dark">Our Story</h3>
+          </div>
+          
+          <p class="text-text leading-relaxed text-lg">
+            Mivule Shades began as a simple idea beneath the branches of a quiet tree. 
+            Inspired by the peace of nature and the needs of our community, we created 
+            a welcoming outdoor space where people could celebrate, work, connect, and 
+            enjoy life without stress or limitations.
+          </p>
+          
+          <p class="text-text leading-relaxed text-lg">
+            What started as a tranquil garden has grown into a multi-purpose community 
+            venue designed to bring people together—beautifully, naturally, and effortlessly.
+          </p>
+          
+          <div class="pt-4">
+            <div class="flex items-center gap-3 text-text-muted">
+              <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Founded in Kitagobwa, Kansangati</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community & Nature Section -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div class="space-y-6 order-2 md:order-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13 0h-6"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-dark">
+              A Space Where Everyone Belongs
+            </h3>
+          </div>
+          
+          <p class="text-text leading-relaxed text-lg">
+            Whether you're hosting a celebration, a corporate meeting, a family day, 
+            or simply looking for a peaceful outdoor work zone, Mivule Shades offers 
+            natural beauty, flexibility, and a sense of belonging.
+          </p>
+          
+          <div class="space-y-4 pt-4">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-dark"><strong>Nature for calm & clarity</strong> – Serene gardens and open spaces</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-dark"><strong>Family-friendly & safe</strong> – Secure environment for all ages</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-dark"><strong>Perfect for connection & events</strong> – Versatile spaces for any occasion</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-secondary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-dark"><strong>Setups for celebrations & creativity</strong> – Customizable for your needs</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative group order-1 md:order-2">
+          <img 
+            src={AboutImage2.src}
+            alt="Event celebration at Mivule Shades" 
+            class="w-full rounded-2xl shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent rounded-2xl"></div>
+          <div class="absolute top-4 right-4">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/90 text-dark text-sm font-semibold">
+              Celebrations
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & Mission Section -->
+      <div class="bg-surface rounded-2xl p-8 md:p-12 shadow-xl border border-border mb-20">
+        <h3 class="text-2xl md:text-3xl font-bold text-dark mb-8 text-center">
+          Our Vision & Mission
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Vision -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20">
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+              </div>
+              <h4 class="font-bold text-xl text-dark">Our Vision</h4>
+            </div>
+            <p class="text-text leading-relaxed">
+              We envision a future where every event—from the grandest celebration to the 
+              quietest meeting—is hosted in a setting that naturally simplifies gathering, 
+              fosters authentic connection, and preserves the moments that matter most.
+            </p>
+          </div>
+          
+          <!-- Mission -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20">
+                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h4 class="font-bold text-xl text-dark">Our Mission</h4>
+            </div>
+            <p class="text-text leading-relaxed">
+              To create and maintain beautiful, versatile outdoor spaces that inspire 
+              connection, celebration, and cherished memories for individuals, families, 
+              and organizations in our community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h3 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Core Values</h3>
+          <p class="text-lg text-text-muted">
+            The principles that guide everything we do at Mivule Shades
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Value 1: Connection -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13 0h-6"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Connection</h4>
+            <p class="text-text-muted">
+              We create spaces where people truly meet, interact, and build meaningful relationships.
+            </p>
+          </div>
+          
+          <!-- Value 2: Celebration -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Celebration</h4>
+            <p class="text-text-muted">
+              We honor every milestone and moment, creating perfect settings for life's special occasions.
+            </p>
+          </div>
+          
+          <!-- Value 3: Preservation -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Preservation</h4>
+            <p class="text-text-muted">
+              We protect memories, stories, and the natural environment that makes our space special.
+            </p>
+          </div>
+          
+          <!-- Value 4: Integrity -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Integrity</h4>
+            <p class="text-text-muted">
+              We serve with honesty, transparency, and respect in all our interactions.
+            </p>
+          </div>
+          
+          <!-- Value 5: Sustainability -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Sustainability</h4>
+            <p class="text-text-muted">
+              We maintain our natural spaces responsibly for future generations to enjoy.
+            </p>
+          </div>
+          
+          <!-- Value 6: Community -->
+          <div class="bg-surface rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-border/50 md:col-span-2 lg:col-span-1">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-brand/10 mb-4">
+              <svg class="w-6 h-6 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xl text-dark mb-2">Community Insight</h4>
+            <p class="text-text-muted">
+              Our decisions are shaped by listening, learning, and serving the needs of our community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="text-center">
+        <div class="inline-block bg-surface rounded-2xl p-8 md:p-10 border border-border shadow-lg">
+          <h3 class="text-2xl md:text-3xl font-bold text-dark mb-4">
+            Experience Mivule Shades
+          </h3>
+          <p class="text-text-muted mb-6 max-w-2xl mx-auto text-lg">
+            Come see our spaces, feel the atmosphere, and discover how we can help create your perfect event.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/contact" 
+              class="inline-flex items-center justify-center gap-2 bg-brand text-text-inverse font-bold py-3 px-8 rounded-full hover:bg-brand-hover transition-colors duration-300 shadow-md hover:shadow-lg min-w-[200px]"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              Schedule a Visit
+            </a>
+            <a 
+              href="/contact" 
+              class="inline-flex items-center justify-center gap-2 bg-accent text-dark font-bold py-3 px-8 rounded-full hover:bg-accent-hover transition-colors duration-300 shadow-md hover:shadow-lg min-w-[200px]"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</Layout>

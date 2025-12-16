@@ -1,0 +1,73 @@
+---
+/**
+ * Base Layout for Mivule Shades
+ * Centralizes SEO and other repetitive elements.
+ * @props {string} title - The title for the page
+ * @props {string} description - The description for SEO
+ * @props {string} image - The Open Graph image for SEO (optional)
+ */
+import '../styles/global.css'
+import Topbar from '../components/Topbar.astro'
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Default props
+const {
+  title = "Mivule Shades – Event Grounds & Nature Venue",
+  description = "Mivule Shades offers versatile outdoor event grounds, corporate spaces, and family leisure areas in a serene natural setting.",
+  image = "/images/hero.jpg"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title & SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.site} />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#2A4D35" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased">
+    
+	 
+	<!-- Header -->
+    <Header />
+
+    <!-- Main Content -->
+    <main id="main" class="min-h-screen">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+    <!-- Topbar -->
+	 <Topbar />
+  </body>
+</html>

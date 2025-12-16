@@ -1,0 +1,37 @@
+# dependencies
+/node_modules
+
+# build output
+# If you are using SSG or SSR and output to 'dist', uncomment the following:
+/dist
+/.astro
+/out
+/build
+
+# dependencies, lock files, and config
+# If you're using Yarn, uncomment the following:
+# /yarn-error.log
+# /.yarn/cache
+# /.yarn/unplugged
+# /.pnp.*
+
+# If you're using pnpm, uncomment the following:
+# /pnpm-debug.log
+# /pnpm-lock.yaml
+
+# If you're using npm, uncomment the following:
+/npm-debug.log
+/package-lock.json
+
+# If you use a Vercel/Netlify/Cloudflare or similar hosting adapter,
+# they may create additional temporary/cache folders. Add them here:
+/.netlify
+/.vercel
+/.idea
+
+# Environment variables
+# This should *always* be ignored as it often contains secrets
+.env
+.env.local
+.env.*.local
+.DS_Store

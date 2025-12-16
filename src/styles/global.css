@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ==================================================
+   Brand Identity (Forest / Nature-Inspired)
+   ================================================== */
+
+/* The @theme block allows you to define the custom theme in Tailwind CSS */
+@theme {
+  /* Primary - Forest Green */
+  --color-brand: #2A4D35;  /* Deep forest green, earthy and natural */
+  --color-brand-hover: #1E3D28;  /* Darker green for hover, like deep woods */
+
+  /* Secondary - Moss Green */
+  --color-secondary: #6A7F43;  /* Earthy moss green, natural and calming */
+  --color-secondary-hover: #4E6432;  /* Slightly darker moss green for hover */
+
+  /* Accents - Warm Woodsy Tones */
+  --color-accent: #fb923c;  /* Tailwind's orange-400 - warm, inviting orange */
+  --color-accent-hover: #f97316;  /* Tailwind's orange-500 - darker orange for hover */
+
+  /* ==================================================
+     Surfaces & Backgrounds
+     ================================================== */
+
+  /* Main page background (light, natural tones) */
+  --color-bg: #E8F1E3;  /* Soft, light greenish-beige, like fresh foliage or moss */
+
+  /* Muted sections (earthy, soft beige) */
+  --color-bg-muted: #F0F4E4;  /* A soft, creamy beige with a hint of green */
+
+  /* Cards / panels – Natural, warm wood */
+  --color-surface: #E4D7B9;  /* Light wood-like surface color, like birch or pine */
+  --color-surface-hover: #D0C59D;  /* A slightly darker shade, like weathered wood */
+
+  /* ==================================================
+     Text Colors
+     ================================================== */
+
+  /* Primary text – Soft charcoal green (easier on the eyes than black) */
+  --color-text: #3B4C3A;  /* Earthy, dark green for text, easy on the eyes */
+
+  /* Muted text */
+  --color-text-muted: #7F8C75;  /* Soft muted green for less important text */
+
+  /* Inverse text (on dark or brand backgrounds) */
+  --color-text-inverse: #FFFFFF;  /* White text on darker, forest-inspired backgrounds */
+
+  /* ==================================================
+     Borders & Dividers
+     ================================================== */
+
+  --color-border: #C3D0B2;  /* Soft greenish-beige border, reflecting the natural environment */
+  --color-border-strong: #A8B99D;  /* A slightly darker border for more contrast */
+
+  /* ==================================================
+     Status Colors (Soft, Nature-Inspired)
+     ================================================== */
+
+  /* Success - Forest Green for positive messages */
+  --color-success: #4C6B43;  /* Deep, forest green for success messages */
+  --color-success-hover: #3B5535;  /* Slightly darker green for hover */
+
+  /* Warning - Soft Amber for warnings */
+  --color-warning: #C19A6E;  /* Warm amber-like color, reminiscent of autumn leaves */
+  --color-warning-hover: #9E7C56;  /* Darker amber for hover */
+
+  /* Error - Soft Red for errors */
+  --color-error: #9B4D3D;  /* Earthy red, like red clay or soil */
+  --color-error-hover: #7C3D2C;  /* Darker red for hover */
+}
+
+/* ==================================================
+   Burger Menu Animation (Hamburger → X)
+   ================================================== */
+
+.burger-line {
+  height: 2px;
+  width: 1.5rem;
+  background-color: currentColor;
+  border-radius: 9999px;
+  transition:
+    transform 200ms ease,
+    opacity 150ms ease;
+}
+
+#nav-toggle.open .burger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#nav-toggle.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#nav-toggle.open .burger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
