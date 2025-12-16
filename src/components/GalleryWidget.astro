@@ -8,7 +8,8 @@ const images = Object.values(galleryImageModules).map((module: any) => module.de
 <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
   {images.map((src, i) => (
     <figure class="break-inside-avoid bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
-      <a href={src.src} class="gallery-link cursor-pointer" data-index={i}>
+      <!-- Link to full image -->
+      <a href={src.src} target="_blank" rel="noopener noreferrer">
         <img 
           src={src.src} 
           alt={`Gallery item ${i + 1}`}
@@ -16,130 +17,8 @@ const images = Object.values(galleryImageModules).map((module: any) => module.de
           loading="lazy"
         />
       </a>
+      
+    
     </figure>
   ))}
 </div>
-
-<!-- Lightbox -->
-<div id="lightbox" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-    <div id="lightbox-loading" class="absolute inset-0 flex items-center justify-center">
-        <div class="loader"></div>
-    </div>
-
-    <img id="lightbox-image" src="" alt="Lightbox image" class="max-w-full max-h-full object-contain">
-    
-    <!-- Removed: div#lightbox-caption -->
-
-    <button id="close-lightbox" class="lightbox-btn absolute top-4 right-4">
-        <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    </button>
-    <button id="prev-lightbox" class="lightbox-btn absolute left-4 top-1/2 -translate-y-1/2">
-        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-        </svg>
-    </button>
-    <button id="next-lightbox" class="lightbox-btn absolute right-4 top-1/2 -translate-y-1/2">
-        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-        </svg>
-    </button>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
-    // const lightboxCaption = document.getElementById('lightbox-caption'); // Removed
-    const loadingIndicator = document.getElementById('lightbox-loading');
-    const closeLightbox = document.getElementById('close-lightbox');
-    const prevButton = document.getElementById('prev-lightbox');
-    const nextButton = document.getElementById('next-lightbox');
-    
-    const imageLinks = document.querySelectorAll('.gallery-link');
-    const imageUrls = Array.from(imageLinks).map(link => (link as HTMLAnchorElement).href);
-    // const imageAlts = Array.from(imageLinks).map(link => link.querySelector('img')?.alt || ''); // Removed
-    let currentIndex = 0;
-
-    function showImage(index: number) {
-      if (!lightboxImage || index < 0 || index >= imageUrls.length) {
-        return;
-      }
-      
-      lightboxImage.classList.remove('is-loaded');
-      if (loadingIndicator) loadingIndicator.classList.add('is-active');
-      
-      lightboxImage.src = imageUrls[index];
-      currentIndex = index;
-    }
-    
-    if (lightboxImage) {
-        lightboxImage.onload = () => {
-            if (loadingIndicator) loadingIndicator.classList.remove('is-active');
-            lightboxImage.classList.add('is-loaded');
-            // if (lightboxCaption) { // Removed
-            //     lightboxCaption.textContent = imageAlts[currentIndex]; // Removed
-            // } // Removed
-        };
-    }
-
-    imageLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const index = parseInt((link as HTMLElement).dataset.index || '0', 10);
-        document.body.style.overflow = 'hidden';
-        lightbox?.classList.add('is-open');
-        showImage(index);
-      });
-    });
-
-    function hideLightbox() {
-      document.body.style.overflow = '';
-      lightbox?.classList.remove('is-open');
-      setTimeout(() => {
-        if (lightboxImage) lightboxImage.src = '';
-      }, 300);
-    }
-
-    if (closeLightbox) {
-      closeLightbox.addEventListener('click', hideLightbox);
-    }
-    
-    if (prevButton) {
-        prevButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            showImage((currentIndex - 1 + imageUrls.length) % imageUrls.length);
-        });
-    }
-
-    if (nextButton) {
-        nextButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            showImage((currentIndex + 1) % imageUrls.length);
-        });
-    }
-
-    if (lightbox) {
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-          hideLightbox();
-        }
-      });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox || !lightbox.classList.contains('is-open')) {
-        return;
-      }
-
-      if (e.key === 'Escape') {
-        hideLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        prevButton?.click();
-      } else if (e.key === 'ArrowRight') {
-        nextButton?.click();
-      }
-    });
-  });
-</script>
