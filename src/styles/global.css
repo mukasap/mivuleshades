@@ -94,3 +94,33 @@
 #nav-toggle.open .burger-line:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
+
+/* ==================================================
+   Lightbox Styles
+   ================================================== */
+
+#lightbox {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#lightbox-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.lightbox-btn {
+    @apply text-white p-2 rounded-full bg-black/30 hover:bg-black/50 transition-colors duration-200;
+}
