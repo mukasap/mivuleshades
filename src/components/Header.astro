@@ -1,5 +1,5 @@
 ---
-import LogoImage from '../assets/logo.png'
+import LogoImage from '../assets/logo.png';
 const navItems = [
   { label: "Home", href: "/"},
   { label: "About", href: "/about" },
@@ -31,7 +31,7 @@ const currentPage = currentUrl === "/" ? "/" : currentUrl;
         class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1 text-text font-semibold"
       >
         <span class="flex h-12 w-12 items-center justify-center rounded-lg text-text-inverse">
-          <img src={LogoImage.src}>
+          <img src={LogoImage.src} width={LogoImage.width} height={LogoImage.height} alt="Mivule Shades Logo">
         </span>
         Mivule Shades
       </a>

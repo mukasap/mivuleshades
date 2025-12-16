@@ -1,6 +1,7 @@
 ---
 // Load images
-const images = Object.keys(import.meta.glob('/src/assets/gallery/*.{jpg,jpeg,png,webp,gif}'));
+const galleryImageModules = import.meta.glob('/src/assets/gallery/*.{jpg,jpeg,png,webp,gif}', { eager: true });
+const images = Object.values(galleryImageModules).map((module: any) => module.default);
 ---
 
 <!-- Masonry layout with captions -->
@@ -8,9 +9,9 @@ const images = Object.keys(import.meta.glob('/src/assets/gallery/*.{jpg,jpeg,png
   {images.map((src, i) => (
     <figure class="break-inside-avoid bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10">
       <!-- Link to full image -->
-      <a href={src} target="_blank" rel="noopener noreferrer">
+      <a href={src.src} target="_blank" rel="noopener noreferrer">
         <img 
-          src={src} 
+          src={src.src} 
           alt={`Gallery item ${i + 1}`}
           class="w-full h-auto transition-transform duration-300 hover:scale-105"
           loading="lazy"
