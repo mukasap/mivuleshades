@@ -2,51 +2,62 @@ export async function onRequestPost({ request }) {
   try {
     const form = await request.formData();
 
-    // Honeypot (optional but recommended)
-    if (form.get("company")) {
-      return json({ ok: true });
-    }
-
-    const name = form.get("name")?.toString().trim();
-    const email = form.get("email")?.toString().trim();
-    const message = form.get("message")?.toString().trim();
+    const name = form.get("name");
+    const email = form.get("email");
+    const message = form.get("message");
 
     if (!name || !email || !message) {
-      return json(
-        { ok: false, error: "Please fill in all fields." },
-        400
-      );
+      return json({ ok: false, error: "All fields are required." }, 400);
     }
 
-    const body = `
-New message from mivuleshades.com
-
+    const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        personalizations: [
+          {
+            to: [{ email: "contact@mivuleshades.com" }],
+            reply_to: { email },
+          },
+        ],
+        from: {
+          email: "contact@mivuleshades.com",
+          name: "Mivule Shades Website",
+        },
+        subject: "New contact form message",
+        content: [
+          {
+            type: "text/plain",
+            value: `
 Name: ${name}
 Email: ${email}
 
-Message:
 ${message}
-`;
-
-    await fetch("mailto:contact@mivuleshades.com", {
-      method: "POST",
-      body,
+            `,
+          },
+        ],
+      }),
     });
+
+    if (!res.ok) {
+      throw new Error("Mail send failed");
+    }
 
     return json({ ok: true });
   } catch (err) {
+    console.error(err);
     return json(
-      { ok: false, error: "Something went wrong. Please try again later." },
+      { ok: false, error: "Failed to send message. Try again later." },
       500
     );
   }
 }
 
-function json(data: unknown, status = 200) {
+function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
   });
 }
