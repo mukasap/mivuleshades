@@ -22,15 +22,15 @@ const currentPage = currentUrl === "/" ? "/" : currentUrl;
     <nav
       aria-label="main navigation"
       role="navigation"
-      class="flex h-[5.5rem] items-stretch justify-between font-medium text-text-muted"
+      class="flex h-[5.5rem] items-stretch justify-between font-medium text-muted"
     >
       <!-- Brand -->
       <a
         href="/"
         aria-label="Brand logo"
-        class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1 text-text font-semibold"
+        class="flex items-center gap-2 py-3 text-lg whitespace-nowrap focus:outline-none lg:flex-1 text font-semibold"
       >
-        <span class="flex h-12 w-12 items-center justify-center rounded-lg text-text-inverse">
+        <span class="flex h-12 w-12 items-center justify-center rounded-lg text-inverse">
           <img src={LogoImage.src} width={LogoImage.width} height={LogoImage.height} alt="Mivule Shades Logo">
         </span>
         Mivule Shades
@@ -39,7 +39,7 @@ const currentPage = currentUrl === "/" ? "/" : currentUrl;
       <!-- Burger (mobile) -->
       <button
         id="nav-toggle"
-        class="relative self-center order-10 z-30 flex flex-col justify-center gap-1.5 lg:hidden text-text"
+        class="relative self-center order-10 z-30 flex flex-col justify-center gap-1.5 lg:hidden text"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle navigation"
@@ -86,7 +86,7 @@ const currentPage = currentUrl === "/" ? "/" : currentUrl;
         <a
           href="/contact"
           class="inline-flex items-center justify-center h-10 gap-2 px-5
-                 text-sm font-medium tracking-wide text-text-inverse
+                 text-sm font-medium tracking-wide text-white
                  transition duration-300 rounded shadow-md whitespace-nowrap
                  bg-brand hover:bg-brand-hover focus:bg-brand-hover
                  focus-visible:outline-none"
